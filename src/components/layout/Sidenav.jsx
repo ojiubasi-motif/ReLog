@@ -1,7 +1,7 @@
 import "./styles/general.css";
 import Logo from "../../../public/img/logo.png";
 import User from "../../../public/img/user.png"
-import { ChevronDown, ChevronRight, ChevronUp } from "react-feather";
+import { ChevronDown, ChevronRight, ChevronUp, Plus } from "react-feather";
 import {
   SideNavItem1,
   SideNavItem2,
@@ -46,68 +46,97 @@ const Sidenav = () => {
       </div>
 
       {/* nav items 1*/}
+{
+    toggleProjects?
+    <div className="ps-3" style={{ height: "40vh", overflowY: "auto" }}>
+      <NavLink
+                to="/new-project"
+                className="nav-link p-2 text-decoration-none d-flex align-items-center justify-content-start rounded mt-2"
+                style={({ isActive }) => {
+                  return isActive
+                    ? { color: "#00afef", backgroundColor: "#e4ebee" }
+                    : { color: "gray" };
+                }}
+              >
+                <Plus size={"18px"} className="fw-bold"/>
+                <p className="p-0 m-0 ms-2 fs-6 fw-bold">New Project</p>
+              </NavLink>
+
+              <NavLink
+                to="/projects/rework"
+                className="nav-link p-2 text-decoration-none d-flex align-items-center justify-content-start rounded mt-2"
+                style={({ isActive }) => {
+                  return isActive
+                    ? { color: "#00afef", backgroundColor: "#e4ebee" }
+                    : { color: "gray" };
+                }}
+              >
+               
+                <p className="p-0 m-0 ms-2 fs-6 fw-lighter">Rework</p>
+              </NavLink>
+      </div>:
       <div className="" style={{ height: "40vh", overflowY: "auto" }}>
-        <ul className="px-3">
-          {SideNavItem1?.map((item, index) => (
-            <li key={index}>
-              <NavLink
-                to={item.link}
-                className="nav-link p-2 text-decoration-none d-flex align-items-center justify-content-start rounded mt-2"
-                style={({ isActive }) => {
-                  return isActive
-                    ? { color: "#00afef", backgroundColor: "#e4ebee" }
-                    : { color: "gray" };
-                }}
-              >
-                {item.icon}
-                <p className="p-0 m-0 ms-2 fs-6 fw-lighter">{item.title}</p>
-              </NavLink>
-            </li>
-          ))}
-        </ul>
+      <ul className="px-3">
+        {SideNavItem1?.map((item, index) => (
+          <li key={index}>
+            <NavLink
+              to={item.link}
+              className="nav-link p-2 text-decoration-none d-flex align-items-center justify-content-start rounded mt-2"
+              style={({ isActive }) => {
+                return isActive
+                  ? { color: "#00afef", backgroundColor: "#e4ebee" }
+                  : { color: "gray" };
+              }}
+            >
+              {item.icon}
+              <p className="p-0 m-0 ms-2 fs-6 fw-lighter">{item.title}</p>
+            </NavLink>
+          </li>
+        ))}
+      </ul>
 
-        {/* analytics nav */}
-        <ul className="px-3 pt-2">
-          <h4 className="fs-6 fw-bolder">Analytics</h4>
-          {SideNavItem2?.map((item, index) => (
-            <li key={index}>
-              <NavLink
-                to={item.link}
-                className="nav-link p-2 text-decoration-none d-flex align-items-center justify-content-start rounded mt-2"
-                style={({ isActive }) => {
-                  return isActive
-                    ? { color: "#00afef", backgroundColor: "#e4ebee" }
-                    : { color: "gray" };
-                }}
-              >
-                {item.icon}
-                <p className="p-0 m-0 ms-2 fs-6 fw-lighter">{item.title}</p>
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-        {/* config nav */}
-        <ul className="px-3 pt-2">
-          <h4 className="fs-6 fw-bold">Configuration</h4>
-          {SideNavItem3?.map((item, index) => (
-            <li key={index}>
-              <NavLink
-                to={item.link}
-                className="nav-link p-2 text-decoration-none d-flex align-items-center justify-content-start rounded mt-2"
-                style={({ isActive }) => {
-                  return isActive
-                    ? { color: "#00afef", backgroundColor: "#e4ebee" }
-                    : { color: "gray" };
-                }}
-              >
-                {item.icon}
-                <p className="p-0 m-0 ms-2 fs-6 fw-lighter">{item.title}</p>
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      </div>
-
+      {/* analytics nav */}
+      <ul className="px-3 pt-2">
+        <h4 className="fs-6 fw-bolder">Analytics</h4>
+        {SideNavItem2?.map((item, index) => (
+          <li key={index}>
+            <NavLink
+              to={item.link}
+              className="nav-link p-2 text-decoration-none d-flex align-items-center justify-content-start rounded mt-2"
+              style={({ isActive }) => {
+                return isActive
+                  ? { color: "#00afef", backgroundColor: "#e4ebee" }
+                  : { color: "gray" };
+              }}
+            >
+              {item.icon}
+              <p className="p-0 m-0 ms-2 fs-6 fw-lighter">{item.title}</p>
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+      {/* config nav */}
+      <ul className="px-3 pt-2">
+        <h4 className="fs-6 fw-bold">Configuration</h4>
+        {SideNavItem3?.map((item, index) => (
+          <li key={index}>
+            <NavLink
+              to={item.link}
+              className="nav-link p-2 text-decoration-none d-flex align-items-center justify-content-start rounded mt-2"
+              style={({ isActive }) => {
+                return isActive
+                  ? { color: "#00afef", backgroundColor: "#e4ebee" }
+                  : { color: "gray" };
+              }}
+            >
+              {item.icon}
+              <p className="p-0 m-0 ms-2 fs-6 fw-lighter">{item.title}</p>
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+    </div>
+}
       {/* nav items 2*/}
       <div className="mt-1">
         <div className="m-3">
