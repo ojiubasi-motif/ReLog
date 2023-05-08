@@ -1,7 +1,20 @@
 .logo{
 
 }
-.logo:hover{
+.user-profile{}
+
+.logo:hover,.user-profile:hover{
     background-color: #e4ebee;
     /* opacity: .5; */
+}
+.nav-link{
+    /* color: rgb(219, 47, 47); */
+}
+.nav-link:hover,.nav-link:active{
+    background-color: #e4ebee;
+    color: "#00afef";
+}
+
+ul{
+    list-style-type: none !important;
 }

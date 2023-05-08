@@ -8,7 +8,7 @@ const Index = () => {
   return (
     <div className='row'>
       <Sidenav/>
-      <div className='col col-md-10 d-flex flex-column'>
+      <div className='col col-md-9 d-flex flex-column'>
         <Topnav/>
         <Outlet/>
       </div>
