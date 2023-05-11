@@ -15,7 +15,7 @@ const Sidenav = () => {
   const [toggleProjects, setToggle] = useState(false);
 
   return (
-    <div className="col-md-2 p-0">
+    <div className="col-md-2 p-0 fixed-top">
       {/* logo */}
       <div
         className="logo d-flex justify-content-between align-items-center p-2"

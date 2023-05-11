@@ -1,78 +1,15 @@
-import { useContext } from "react";
-import { ChevronDown, MoreVertical, PlayCircle, Plus } from "react-feather";
+// import { useContext } from "react";
+import { ChevronDown, Plus } from "react-feather";
 import { NavLink } from "react-router-dom";
-import { ClientContext } from "../../context/ClientContext";
-import dImg from "../../../public/img/user.png";
+// import { ClientContext } from "../../context/ClientContext";
+import AllSessions from "./AllSessions";
+import AllIssues from "./AllIssues";
 
-const dummy = [
-  {
-    img: dImg,
-    name: "Jane doe",
-    email: "jane@gmail.com",
-    activity: "15-05-'23 00:12:34",
-    event: "13 events",
-    locaion: "Abuja",
-    device: "Mac Os",
-  },
-  {
-    img: dImg,
-    name: "Jane doe",
-    email: "jane@gmail.com",
-    activity: "15-05-'23 00:12:34",
-    event: "13 events",
-    locaion: "Abuja",
-    device: "Mac Os",
-  },
-  {
-    img: dImg,
-    name: "Jane doe",
-    email: "jane@gmail.com",
-    activity: "15-05-'23 00:12:34",
-    event: "13 events",
-    locaion: "Abuja",
-    device: "Mac Os",
-  },
-  {
-    img: dImg,
-    name: "Jane doe",
-    email: "jane@gmail.com",
-    activity: "15-05-'23 00:12:34",
-    event: "13 events",
-    locaion: "Abuja",
-    device: "Mac Os",
-  },
-  {
-    img: dImg,
-    name: "Jane doe",
-    email: "jane@gmail.com",
-    activity: "15-05-'23 00:12:34",
-    event: "13 events",
-    locaion: "Abuja",
-    device: "Mac Os",
-  },
-  {
-    img: dImg,
-    name: "Jane doe",
-    email: "jane@gmail.com",
-    activity: "15-05-'23 00:12:34",
-    event: "13 events",
-    locaion: "Abuja",
-    device: "Mac Os",
-  },
-  {
-    img: dImg,
-    name: "Jane doe",
-    email: "jane@gmail.com",
-    activity: "15-05-'23 00:12:34",
-    event: "13 events",
-    locaion: "Abuja",
-    device: "Mac Os",
-  },
-];
+
 
 const Index = () => {
-  const { isLoggedIn } = useContext(ClientContext);
-  console.log("is a user available?", isLoggedIn);
+  // const { isLoggedIn } = useContext(ClientContext);
+
   return (
     <div className="p-2 mt-4">
       {/* dashboard nav */}
@@ -132,75 +69,9 @@ const Index = () => {
         </div>
       </div>
 
-      <div
-        className="dash-table rounded mt-1 p-3"
-        style={{ minHeight: "70vh", backgroundColor: "white", width: "100%" }}
-      >
-        <span className="d-flex justify-content-between align-items-center w-100">
-          <p className="p-0 m-0 fs-6">All Sessions</p>
-          <MoreVertical
-            size={"16px"}
-            className=""
-            style={{ cursor: "pointer" }}
-          />
-        </span>
+      <AllSessions/>
 
-        <table className="table table-borderless">
-          <thead>
-            <tr className="border-bottom">
-              {/* <th scope="col">#</th> */}
-              <th scope="col">Name</th>
-              <th scope="col">Activity and Date</th>
-              <th scope="col">Location and Platform</th>
-            </tr>
-          </thead>
-          <tbody>
-            {dummy.map((item, index) => (
-              <tr key={index} className="border-bottom ">
-                <td>
-                  <div className="d-flex justify-content-start align-items-center">
-                    <img
-                      src={item.img}
-                      alt="user-img"
-                      style={{
-                        width: "40px",
-                        height: "40px",
-                        borderRadius: "50%",
-                      }}
-                    />
-                    <div className="ms-2">
-                      <NavLink className="gen-link" to="/">
-                        <h6 className="gen-text p-0 m-0">{item.name}</h6>
-                      </NavLink>
-
-                      <p className="p-0 m-0">{item.email}</p>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div className="d-flex justify-content-start align-items-center">
-                    <PlayCircle
-                      size={"24px"}
-                      className="gen-text"
-                      style={{ cursor: "pointer" }}
-                    />
-                    <div className="ms-2">
-                      <NavLink className="gen-link" to="/">
-                        <h6 className="gen-text m-0 p-0">{item.activity}</h6>
-                      </NavLink>
-                      <p className="p-0 m-0">{item.event}</p>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <p className="p-0 m-0">{item.locaion}</p>
-                  <h6 className="m-0 p-0">{item.device}</h6>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <AllIssues/>
     </div>
   );
 };

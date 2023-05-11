@@ -65,3 +65,6 @@ ul{
 .topnav-link:hover{
     text-decoration: underline;
 }
+.dash-table{
+    box-shadow: 0px -2px 10px 7px rgba(230, 233, 233, 0.6);
+}
