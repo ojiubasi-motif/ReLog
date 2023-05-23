@@ -6,6 +6,7 @@ import Dashboard from './components/dashboard/Index'
 import Sessions from './components/sessions/Index';
 import Login from './components/authorisation/Login'
 import Register from './components/authorisation/Register'
+import Issues from './components/issues/Index'
 
 function App() {
   const {isLoggedIn} = useContext(ClientContext);
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<PageLayout/>}>
             <Route index element={<Dashboard/>}/>
             <Route path="/sessions" element={<Sessions/>}/>
+            <Route path="/issues" element={<Issues/>}/>
           </Route>
         </Routes>
     </>

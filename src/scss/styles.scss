@@ -6,11 +6,18 @@
         outline: none;
         border: none;
 }
+.gen-btn:hover{
+        background-color: lightgray;
+}
 .gen-text{
         color: #00afef;
 }
 .gen-link{
         text-decoration: none;
+}
+.gen-paragraph{
+        margin: 0;
+        padding: 0;
 }
 .gen-link:hover{
         color: #00afef;
