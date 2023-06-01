@@ -6,9 +6,9 @@ import { BrowserRouter } from "react-router-dom";
 import './index.css'
 import {ClientProvider} from './context/ClientContext'
 // Import our custom CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './scss/styles.scss';
-// Import all of Bootstrap's JS
-import * as bootstrap from 'bootstrap'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

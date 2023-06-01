@@ -170,14 +170,22 @@ const Sidenav = () => {
         </ul>
 
         {/* user */}
-        <div className="user-profile p-3  d-flex align-items-center justify-content-between" style={{cursor: "pointer", height: "60px"}}>
-            <img src={User} alt="user-avatar" className="rounded" style={{width:"35px", height:"35px", objectFit:"contain"}}/>
-            <div className="">
-                <h6 className="p-0 m-0">email@gmail.com</h6>
-                <p className="p-0 m-0" style={{fontSize:"14px"}}>My Organisation</p>
-            </div>
-            <ChevronRight size={"14px"}/>
+        <div className="dropend">
+          <div className="user-profile p-3  d-flex align-items-center justify-content-between dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style={{cursor: "pointer", height: "60px"}}>
+              <img src={User} alt="user-avatar" className="rounded" style={{width:"35px", height:"35px", objectFit:"contain"}}/>
+              <div className="">
+                  <h6 className="p-0 m-0">email@gmail.com</h6>
+                  <p className="p-0 m-0" style={{fontSize:"14px"}}>My Organisation</p>
+              </div>
+              {/* <ChevronRight size={"14px"}/> */}
+          </div>
+          <ul className="dropdown-menu ms-2">
+            <li><a className="dropdown-item" href="#">Action</a></li>
+            <li><a className="dropdown-item" href="#">Another action</a></li>
+            <li><a className="dropdown-item" href="#">Something else here</a></li>
+          </ul>
         </div>
+        
       </div>
 
 

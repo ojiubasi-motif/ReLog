@@ -2,3 +2,13 @@
     padding: 0;
     margin: 0;
 }
+.ish-nav{
+    color:#e4ebee;
+}
+.ish-nav:hover{
+    color:#e4ebee;
+}
+.ish-nav:active{
+    border-bottom: 1px solid #e4ebee;
+    color: #00afef;
+}
