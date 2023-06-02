@@ -1,6 +1,9 @@
-import { BarChart2, ChevronDown, Info } from "react-feather";
+import { BarChart2, Info } from "react-feather";
 import { IssuesData } from "../../layout/constants";
 import BtnDropdown from "./BtnDropdown";
+import { NavLink } from "react-router-dom";
+import Histogram from "../../assets/Histogram";
+
 
 const Untriaged = () => {
   return (
@@ -70,8 +73,9 @@ const Untriaged = () => {
                   </div>
 
                   <div className="ms-3">
+                    <NavLink to="" className="topnav-link">
                     <span className="display-flex">
-                      <b>{item?.error}</b>
+                      <b className="fw-bold">{item?.error}</b>
                       <span
                         className=" mx-1"
                         style={{
@@ -81,8 +85,10 @@ const Untriaged = () => {
                           borderRadius: "50%",
                         }}
                       />
-                      <p className="gen-paragraph">{item?.errorDetails}</p>
+                      <p className="gen-paragraph d-inline-block text-truncate" style={{maxWidth:"150px"}}>{item?.errorDetails}</p>
                     </span>
+                    </NavLink>
+                    
                     <p className="gen-paragraph">{item?.action}</p>
                   </div>
                 </div>
@@ -90,7 +96,9 @@ const Untriaged = () => {
 
               {/* ===histogram======= */}
               <td>
-                <div></div>
+                <div style={{width:"100px", height:"50px"}}>
+                  <Histogram/>
+                </div>
               </td>
 
               {/* ===severity==== */}

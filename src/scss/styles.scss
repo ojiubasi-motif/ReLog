@@ -35,6 +35,16 @@
         color: #00afef;
         text-decoration: underline;
 }
+.topnav-link{
+        text-decoration: none;
+        color: #00afef;
+        font-size: 12px;
+        font-weight: lighter;
+    }
+.topnav-link:hover{
+        color: #00afef;
+        text-decoration: underline;
+    }
 .display-flex{
         display: flex;
         justify-content: space-between;

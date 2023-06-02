@@ -106,7 +106,7 @@ const Index = () => {
       <div className="rounded p-2 mt-3" style={{ backgroundColor: "white" }}>
         <ul className="border-bottom display-flex justify-content-start p-2 pb-0">
           {[
-            { text: "Untriaged(50)", link: "untriaged" },
+            { text: "Untriaged(50)", link: "" },
             { text: "high impact(50)", link: "high-impact" },
             { text: "low impact(50)", link: "low-impact" },
             { text: "ignored(50)", link: "ignored" },
@@ -114,6 +114,7 @@ const Index = () => {
             <li className="p-0 m-0 me-2" key={index}>
               <NavLink
                 to={item?.link}
+                end={item?.link == ""}
                 className="ish-nav p-2 px-0 me-2 text-decoration-none d-flex align-items-center justify-content-start"
                 style={({ isActive }) => {
                   return isActive

@@ -13,6 +13,7 @@ import Untriaged from './components/issues/outlets/Untriaged'
 import HighImpact from './components/issues/outlets/HighImpact'
 import LowImpact from './components/issues/outlets/LowImpact'
 import Ignored from './components/issues/outlets/Ignored'
+import NotFound from "./components/assets/NotFound";
 
 function App() {
   const {isLoggedIn} = useContext(ClientContext);
@@ -26,12 +27,13 @@ function App() {
             <Route index element={<Dashboard/>}/>
             <Route path="/sessions" element={<Sessions/>}/>
             <Route path="/issues" element={<Issues/>}>
-              <Route index path="untriaged" element={<Untriaged/>}/>
+              <Route index  element={<Untriaged/>}/>
               <Route path="high-impact" element={<HighImpact/>}/>
               <Route path="low-impact" element={<LowImpact/>}/>
               <Route path="ignored" element={<Ignored/>}/>
             </Route>
           </Route>
+          <Route path="*" element={<NotFound/>}/>
         </Routes>
     </>
   );
